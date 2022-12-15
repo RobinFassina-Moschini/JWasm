@@ -28,6 +28,9 @@
    -  format -pe: 64-bit segments defined with USE64 are added to internal
       "flat" group. Allows to mix 32- and 64-bit segments in .model FLAT;
       see flatgrp5.asm & flatgrp6.asm.
+   -  simplified segment directive .code with name argument always added
+      the segment to dgroup. Now this is done only if segment is 16-bit; see
+      tiny2.asm.
 
    14.11.2022, v2.16:
 
