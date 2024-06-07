@@ -1186,19 +1186,6 @@ ret_code idata_fixup( struct code_info *CodeInfo, unsigned CurrOpnd, struct expr
             DebugMsg1(("idata_fixup, fixup_type=OFF8\n" ));
             fixup_type = FIX_OFF8;
         }
-#if 0
-    } else if( CodeInfo->mem_type == MT_FAR ) {
-        /* v2.04: to be tested. this code is most likely obsolete.
-         * There's never a PTR16|PTR32 fixup here. Far JMP/CALL are handled
-         * elsewhere, and data items also.
-         */
-        /* temporary */
-        printf("idata_fixup: MT_FAR occured at %s:%" I32_SPEC "u\n", CurrFName[ASM], LineNumber );
-        fixup_type = ( Ofssize ) ? FIX_PTR32 : FIX_PTR16;
-        CodeInfo->isfar = TRUE; /* needed for mark_fixupp() */
-        if ( opndx->Ofssize != USE_EMPTY )
-            CodeInfo->Ofssize = opndx->Ofssize;
-#endif
     } else if( IS_OPER_32( CodeInfo ) ) {
 #if AMD64_SUPPORT
         /* v2.06: changed */

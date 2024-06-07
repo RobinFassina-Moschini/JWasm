@@ -67,6 +67,9 @@ static void SaveState( void )
     DebugMsg(( "SaveState exit\n" ));
 }
 
+/* flags: b0: 1=store line with comment
+ */
+
 void StoreLine( const char *srcline, int flags, uint_32 lst_position )
 /********************************************************************/
 {
